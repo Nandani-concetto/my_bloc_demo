@@ -12,9 +12,11 @@ class NoInternetException extends AppException {
 }
 
 class PostException extends AppException{
+  final String message;
+
+  PostException(this.message);
   @override
   void onException({BuildContext? context, Function? onButtonClick}) {
     print("Error while fetching all details");
   }
-
 }

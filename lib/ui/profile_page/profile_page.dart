@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-class ScreenArguments {
-  final String username;
-
-  ScreenArguments(this.username);
-}
+// class ScreenArguments {
+//   final String username;
+//   ScreenArguments(this.username);
+// }
 
 class ProfilePage extends StatefulWidget {
-  static const routeName = '/second';
+  static const routeName = '/profile';
   final String username;
   const ProfilePage({
     Key? key,
@@ -26,7 +25,7 @@ class ProfilePageState extends State<ProfilePage> {
       ),
       body: Text(widget.username,
         style: TextStyle(
-            fontSize:30
+            fontSize:20
         ),
       ),
     );

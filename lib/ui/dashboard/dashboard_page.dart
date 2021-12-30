@@ -316,10 +316,11 @@ class DashboardPageState extends State<DashboardPage> {
       child: Container(
           height: 56,
           width: 350,
+
           child: StreamBuilder<Details?>(
             initialData: null,
             stream: _dashboardBloc.postStream,
-            builder: (context, index) {
+            builder: (context, snapshot) {
               return ElevatedButton(
                 onPressed: () {
                   counter = 1;
@@ -332,7 +333,7 @@ class DashboardPageState extends State<DashboardPage> {
                     if (success) {
                       passwordKey.currentState!.save();
                       _dashboardBloc.fetchDetails(
-                          emailController.text, password);
+                          emailController.text, password,context);
                       print("Email : ${emailController.text}");
                       print("PassWord : ${password}");
                     }
