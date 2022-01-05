@@ -303,31 +303,7 @@ class DashboardPageState extends State<DashboardPage> {
                           counter = 1;
                           isWriting = false;
                           _dashboardBloc.isLoginPressed = true;
-                          final isValid =
-                              _dashboardBloc.emailKey.currentState!.validate();
-                          if (isValid) {
-                            snapshot.data ?? false;
-                            _dashboardBloc.emailKey.currentState!.save();
-                            final success = _dashboardBloc
-                                .passwordKey.currentState!
-                                .validate();
-                            if (success) {
-                              _dashboardBloc.indicatorStreamController.sink
-                                  .add(true);
-                              _dashboardBloc.passwordKey.currentState!.save();
-                              _dashboardBloc.fetchDetails(
-                                  _dashboardBloc.emailController.text,
-                                  password,
-                                  context,
-                                  displayDialog);
-                              await Future.delayed(const Duration(seconds: 1));
-                              _dashboardBloc.indicatorStreamController.sink
-                                  .add(false);
-                              print(
-                                  "Email : ${_dashboardBloc.emailController.text}");
-                              print("PassWord : ${password}");
-                            }
-                          } else {}
+                          _dashboardBloc.checkValidate(password,context,displayDialog);
                         },
                         style:
                             ElevatedButton.styleFrom(primary: _appTheme.black),

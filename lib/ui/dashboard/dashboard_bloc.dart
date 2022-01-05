@@ -16,6 +16,9 @@ class DashboardBloc extends BlocBase {
   bool isLoginPressed = false;
   bool isError = false;
   String myErrorString = "";
+  String password = '';
+  String email = '';
+
   var passWordController = TextEditingController();
   var emailController = TextEditingController();
   final formKey = GlobalKey<FormState>();
@@ -101,6 +104,32 @@ class DashboardBloc extends BlocBase {
       myErrorString = "";
     } else {
       myErrorString = "";
+    }
+  }
+
+  checkValidate(password,BuildContext context, displayDialog) async {
+    final isValid = emailKey.currentState!.validate();
+    if (isValid) {
+      //snapshot.data ?? false;
+      emailKey.currentState!.save();
+      final success = passwordKey.currentState!
+          .validate();
+      if (success) {
+        indicatorStreamController.sink
+            .add(true);
+        passwordKey.currentState!.save();
+        fetchDetails(
+            emailController.text,
+            password,
+            context,
+            displayDialog);
+        await Future.delayed(const Duration(seconds: 1));
+        indicatorStreamController.sink
+            .add(false);
+        print(
+            "Email : ${emailController.text}");
+        print("PassWord : ${password}");
+      }
     }
   }
 }
