@@ -85,40 +85,45 @@ class AppThemeState extends State<AppTheme> {
   TextStyle get signupTextStyle => TextStyle(
         fontFamily: "Nunito",
         fontWeight: FontWeight.w700,
-        fontSize: 18.0,
+        fontSize: 18.0.sp,
       );
+  TextStyle get noInternetTextStyle => TextStyle(
+      fontWeight: FontWeight.w500,
+      fontSize: getResponsiveFont(35.sp),
+      color: whiteColor);
+
 
   TextStyle get loginTextStyle => TextStyle(
       fontFamily: "Nunito",
       color: Colors.white,
       fontWeight: FontWeight.w800,
-      fontSize: 36.0);
+      fontSize: 36.0.sp);
 
   TextStyle get doyouTextStyle => TextStyle(
       color: Colors.white,
       fontFamily: "Nunito",
       fontWeight: FontWeight.normal,
-      fontSize: 15.0);
+      fontSize: 15.0.sp);
 
   TextStyle get login => TextStyle(
       color: Colors.white,
       fontFamily: "Nunito",
       fontWeight: FontWeight.w700,
-      fontSize: 15.0);
+      fontSize: 15.0.sp);
 
   TextStyle get forgot => TextStyle(
         fontFamily: "Nunito",
         fontWeight: FontWeight.normal,
         decoration: TextDecoration.underline,
         color: Colors.black,
-        fontSize: 15,
+        fontSize: 15.sp,
       );
 
   TextStyle get loginOnButton => TextStyle(
       fontFamily: "Nunito",
       fontWeight: FontWeight.w700,
       color: Colors.white,
-      fontSize: 17);
+      fontSize: 17.sp);
 
   TextStyle get lableOfPassWord =>
       TextStyle(fontFamily: "Nunito", fontWeight: FontWeight.normal);

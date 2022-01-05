@@ -12,7 +12,7 @@ class LoginRepositoryImpl extends LoginRepository {
 
   @override
   Future<Details> getLogin(UserRequest userRequest) {
-    // TODO: implement getPostList
+
    return  _postService.getLogin(userRequest);
   }
 

@@ -24,36 +24,4 @@ class PostServices extends ApiClient {
       throw e;
     }
   }
-  // Future<Details> getLogin(String username, String password) async {
-  //   Map request = {
-  //     "device_id":
-  //         "fugvk9qw2vk:apa91bg5duiltd0e-nt5yqknuocuymtqdkgugv5ylx74-arlhpliekbm-zfio3l7ntbihtttvitm5dc6hc2bwgea-tylqamvjw4jthubyl9jikphfskcsgrlr6266voo1hexcq6y821m",
-  //     "device_type": "1",
-  //     "latitude": 0.0,
-  //     "longitude": 0.0,
-  //     'username': username,
-  //     'password': password,
-  //   };
-  //
-  //   final response = await post(
-  //     baseUrl,
-  //     headers: {},
-  //     body: jsonEncode(request),
-  //   );
-  //   print(baseUrl);
-  //
-  //   print(jsonEncode(request));
-  //
-  //
-  //   if (response.statusCode == successResponse) {
-  //     print(response.body);
-  //     try {
-  //       return Details.fromJson(jsonDecode(response.body));
-  //     } catch (exception) {
-  //       throw Exception(exception.toString());
-  //     }
-  //   } else {
-  //     throw PostException();
-  //   }
-  // }
 }
